@@ -33,24 +33,31 @@ class BodyHome extends StatelessWidget {
               ),
             ),
             ListView(
+              shrinkWrap: true,
               children: [
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
                   ),
-                  padding:const  EdgeInsets.all(25),
+                  padding: const EdgeInsets.all(25),
                   child: Row(
                     children: [
-                      Column(
-                        children: const [
-                          Text('Nome do gato'),
-                          Text('Descrição'),
-                          Text('Descrição'),
-                        ],
+                      Expanded(
+                        child: Column(
+                          children: const [
+                            Text('Nome do gato'),
+                            Text('Descrição'),
+                            Text('Descrição'),
+                          ],
+                        ),
                       ),
-                      Column(
-                        children: [],
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Image.network('https://cdn2.thecatapi.com/images/131.jpg'),
+                          ],
+                        ),
                       )
                     ],
                   ),
