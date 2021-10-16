@@ -9,5 +9,9 @@ abstract class AppPages {
       name: AppRoutes.initial,
       page: () => const HomePage(),
     ),
+    GetPage(
+      name: AppRoutes.show_cat,
+      page: () => const HomePage(),
+    ),
   ];
 }

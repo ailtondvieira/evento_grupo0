@@ -24,7 +24,14 @@ class BodyHome extends StatelessWidget {
             Text(
               'Escolha o seu melhor gatinho',
               style: Get.textTheme.bodyText1,
-            )
+            ),
+            MaterialButton(
+              onPressed: () {},
+              child: Text(
+                'Ver gatinho',
+                style: Get.textTheme.headline1!.copyWith(fontSize: 18),
+              ),
+            ),
           ],
         ),
       ),
