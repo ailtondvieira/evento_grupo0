@@ -1,20 +1,18 @@
-import 'package:evento001/models/breeds_model.dart';
+
 import 'package:get/get.dart';
 
-import 'package:evento001/repository/repository.dart';
+import '../../infra/repositories/all_repository.dart';
 
 class HomeController extends GetxController {
   final AllRepository repository;
   HomeController({
     required this.repository,
   });
-
-  List<BreedsModel> breeds = [];
-
+  var allBreeds;
   @override
   void onInit() async {
-    breeds = await repository.breedsGet();
-    print(breeds.toString());
+    allBreeds = await repository.allBreeds();
+
     super.onInit();
   }
 }
