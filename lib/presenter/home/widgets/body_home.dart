@@ -1,3 +1,4 @@
+import 'package:evento001/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +27,9 @@ class BodyHome extends StatelessWidget {
               style: Get.textTheme.bodyText1,
             ),
             MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoutes.show_cat);
+              },
               child: Text(
                 'Ver gatinho',
                 style: Get.textTheme.headline1!.copyWith(fontSize: 18),
@@ -55,7 +58,8 @@ class BodyHome extends StatelessWidget {
                       Expanded(
                         child: Column(
                           children: [
-                            Image.network('https://cdn2.thecatapi.com/images/131.jpg'),
+                            Image.network(
+                                'https://cdn2.thecatapi.com/images/131.jpg'),
                           ],
                         ),
                       )

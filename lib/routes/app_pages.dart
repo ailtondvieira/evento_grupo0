@@ -1,3 +1,5 @@
+import 'package:evento001/presenter/show_cat/show_cat_page.dart';
+
 import '../presenter/home/home_page.dart';
 
 import 'app_routes.dart';
@@ -11,7 +13,7 @@ abstract class AppPages {
     ),
     GetPage(
       name: AppRoutes.show_cat,
-      page: () => const HomePage(),
+      page: () => const ShowCatPage(),
     ),
   ];
 }
