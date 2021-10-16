@@ -1,4 +1,5 @@
 import 'package:evento001/presenter/home/home_controller.dart';
+import 'package:evento001/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,10 +17,15 @@ class BodyHome extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Wiki Cat',
-              style: Get.textTheme.headline1!.copyWith(
-                color: AppColors.primaryColor,
+            GestureDetector(
+              onTap: () {
+                Get.toNamed(AppRoutes.show_cat);
+              },
+              child: Text(
+                'Wiki Cat',
+                style: Get.textTheme.headline1!.copyWith(
+                  color: AppColors.primaryColor,
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -37,12 +43,7 @@ class BodyHome extends StatelessWidget {
                   builder: (_) {
                     if (_.isLoading)
                       // ignore: curly_braces_in_flow_control_structures
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          CircularProgressIndicator.adaptive(),
-                        ],
-                      );
+                      return Container();
                     return ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
