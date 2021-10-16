@@ -7,4 +7,11 @@ class AllRepository extends GetConnect {
 
     return response.body;
   }
+
+  Future getCat(String id) async {
+    var response =
+        await get('https://api.thecatapi.com/v1/images/search?breed_ids=$id');
+
+    return response.body;
+  }
 }

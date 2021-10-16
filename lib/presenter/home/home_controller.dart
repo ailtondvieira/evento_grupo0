@@ -13,6 +13,7 @@ class HomeController extends GetxController {
   @override
   void onInit() async {
     allBreeds = await repository.allBreeds();
+    var getcat = await repository.getCat('abys'); // Id do gato Exemplo apenas
 
     super.onInit();
   }
