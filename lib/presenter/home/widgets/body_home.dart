@@ -32,30 +32,63 @@ class BodyHome extends StatelessWidget {
                 style: Get.textTheme.headline1!.copyWith(fontSize: 18),
               ),
             ),
+            const SizedBox(height: 30),
             ListView(
               shrinkWrap: true,
               children: [
                 Container(
+                  height: 175,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
+                    color: AppColors.primaryColor,
                   ),
-                  padding: const EdgeInsets.all(25),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        child: Column(
-                          children: const [
-                            Text('Nome do gato'),
-                            Text('Descrição'),
-                            Text('Descrição'),
-                          ],
+                        child: Container(
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.orange[50],
+                          ),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                'Nome do gato',
+                                style: Get.textTheme.headline1!.copyWith(
+                                  color: AppColors.primaryDark,
+                                  fontSize: 25,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(height: 10),
+                              const Text('Idade: 5 anos'),
+                              const SizedBox(height: 3),
+                              const Text('Origem: Espanha'),
+                              const SizedBox(height: 3),
+                              const Text('Idade: 5 anos'),
+                              const SizedBox(height: 3),
+                              const Text('Origem: Espanha'),
+                              const SizedBox(height: 3),
+                            ],
+                          ),
                         ),
                       ),
+                      const SizedBox(width: 15),
                       Expanded(
                         child: Column(
                           children: [
-                            Image.network('https://cdn2.thecatapi.com/images/131.jpg'),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(25),
+                              child: Image.network(
+                                'https://cdn2.thecatapi.com/images/131.jpg',
+                                fit: BoxFit.cover,
+                                height: 175,
+                              ),
+                            ),
                           ],
                         ),
                       )
