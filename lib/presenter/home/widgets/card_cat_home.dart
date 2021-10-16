@@ -8,6 +8,7 @@ class CardCatHome extends StatelessWidget {
   final String intelligence;
   final String origin;
   final String energyLevel;
+  final String imgPath;
 
   const CardCatHome({
     Key? key,
@@ -15,6 +16,7 @@ class CardCatHome extends StatelessWidget {
     required this.intelligence,
     required this.origin,
     required this.energyLevel,
+    required this.imgPath,
   }) : super(key: key);
 
   @override
@@ -65,7 +67,7 @@ class CardCatHome extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(25),
                   child: Image.network(
-                    'https://cdn2.thecatapi.com/images/131.jpg',
+                    imgPath,
                     fit: BoxFit.cover,
                     height: 175,
                   ),

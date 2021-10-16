@@ -7,4 +7,11 @@ class AllRepository extends GetConnect {
 
     return response.body;
   }
+
+  Future allCategories() async {
+    var response = await get('https://api.thecatapi.com/v1/categories',
+        headers: {'x-api-key': '3e27cd10-26ab-4dff-be1e-d2395d31c8ef'});
+
+    return response.body;
+  }
 }
