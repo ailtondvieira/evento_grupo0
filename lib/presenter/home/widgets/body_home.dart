@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../theme/app_colors.dart';
+import 'card_cat_home.dart';
 
 class BodyHome extends StatelessWidget {
   const BodyHome({Key? key}) : super(key: key);
@@ -10,20 +11,42 @@ class BodyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        padding: const EdgeInsets.all(25),
+        padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'TinderCat',
+              'Wiki Cat',
               style: Get.textTheme.headline1!.copyWith(
                 color: AppColors.primaryColor,
               ),
             ),
             const SizedBox(height: 10),
             Text(
-              'Escolha o seu melhor gatinho',
+              'Entenda mais sobre os gatinhos do planeta.',
               style: Get.textTheme.bodyText1,
+            ),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 50,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 6,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return CircleAvatar(
+                    backgroundColor: Colors.white,
+                    radius: 30,
+                    child: Text(
+                      'sinks',
+                      style: Get.textTheme.headline1!.copyWith(
+                        color: Colors.black,
+                        fontSize: 15,
+                      ),
+                    ),
+                  );
+                },
+              ),
             ),
             MaterialButton(
               onPressed: () {},
@@ -32,70 +55,35 @@ class BodyHome extends StatelessWidget {
                 style: Get.textTheme.headline1!.copyWith(fontSize: 18),
               ),
             ),
-            const SizedBox(height: 30),
-            ListView(
-              shrinkWrap: true,
-              children: [
-                Container(
-                  height: 175,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: AppColors.primaryColor,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          padding: const EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.orange[50],
-                          ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Text(
-                                'Nome do gato',
-                                style: Get.textTheme.headline1!.copyWith(
-                                  color: AppColors.primaryDark,
-                                  fontSize: 25,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: 10),
-                              const Text('Idade: 5 anos'),
-                              const SizedBox(height: 3),
-                              const Text('Origem: Espanha'),
-                              const SizedBox(height: 3),
-                              const Text('Idade: 5 anos'),
-                              const SizedBox(height: 3),
-                              const Text('Origem: Espanha'),
-                              const SizedBox(height: 3),
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 15),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(25),
-                              child: Image.network(
-                                'https://cdn2.thecatapi.com/images/131.jpg',
-                                fit: BoxFit.cover,
-                                height: 175,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: ListView(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: const [
+                    CardCatHome(
+                      name: 'Gatinho x',
+                      energyLevel: '1',
+                      intelligence: '12',
+                      origin: 'Espanha',
+                    ),
+                    CardCatHome(
+                      name: 'Gatinho x',
+                      energyLevel: '1',
+                      intelligence: '12',
+                      origin: 'Espanha',
+                    ),
+                    CardCatHome(
+                      name: 'Gatinho x',
+                      energyLevel: '1',
+                      intelligence: '12',
+                      origin: 'Espanha',
+                    ),
+                  ],
                 ),
-              ],
+              ),
             )
           ],
         ),

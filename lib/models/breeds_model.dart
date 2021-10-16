@@ -14,15 +14,13 @@ class ListBreeds {
 
   factory ListBreeds.fromMap(Map<String, dynamic> map) {
     return ListBreeds(
-      listBreeds: List<BreedsModel>.from(
-          map['listBreeds']?.map((x) => BreedsModel.fromJson(x))),
+      listBreeds: List<BreedsModel>.from(map['listBreeds']?.map((x) => BreedsModel.fromJson(x))),
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory ListBreeds.fromJson(String source) =>
-      ListBreeds.fromMap(json.decode(source));
+  factory ListBreeds.fromJson(String source) => ListBreeds.fromMap(json.decode(source));
 }
 
 class BreedsModel {
@@ -193,8 +191,7 @@ class BreedsModel {
 
   String toJson() => json.encode(toMap());
 
-  factory BreedsModel.fromJson(String source) =>
-      BreedsModel.fromMap(json.decode(source));
+  factory BreedsModel.fromJson(String source) => BreedsModel.fromMap(json.decode(source));
 }
 
 class ImageModel {
@@ -229,8 +226,7 @@ class ImageModel {
 
   String toJson() => json.encode(toMap());
 
-  factory ImageModel.fromJson(String source) =>
-      ImageModel.fromMap(json.decode(source));
+  factory ImageModel.fromJson(String source) => ImageModel.fromMap(json.decode(source));
 }
 
 class Weight {

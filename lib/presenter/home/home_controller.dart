@@ -13,8 +13,8 @@ class HomeController extends GetxController {
 
   @override
   void onInit() async {
-    var breeds = await repository.breedsGet();
-
+    breeds = await repository.breedsGet();
+    print(breeds.toString());
     super.onInit();
   }
 }
