@@ -8,7 +8,7 @@ abstract class AppTheme {
       primaryColor: AppColors.primaryColor,
       textTheme: const TextTheme(
         headline1: TextStyle(
-          fontSize: 22,
+          fontSize: 30,
           fontWeight: FontWeight.w800,
           color: Colors.black,
         ),
@@ -18,14 +18,20 @@ abstract class AppTheme {
 
   static ThemeData dark() {
     return ThemeData(
-      brightness: Brightness.dark,
+      scaffoldBackgroundColor: AppColors.primaryDark,
+      // brightness: Brightness.dark,
       iconTheme: const IconThemeData(color: Colors.white),
       primaryColor: AppColors.primaryColor,
       textTheme: const TextTheme(
         headline1: TextStyle(
-          fontSize: 20,
+          fontSize: 28,
           fontWeight: FontWeight.w700,
           color: Colors.white,
+        ),
+        bodyText1: TextStyle(
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.normal,
         ),
       ),
     );
