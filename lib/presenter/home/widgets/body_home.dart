@@ -32,6 +32,31 @@ class BodyHome extends StatelessWidget {
                 style: Get.textTheme.headline1!.copyWith(fontSize: 18),
               ),
             ),
+            ListView(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                  ),
+                  padding:const  EdgeInsets.all(25),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: const [
+                          Text('Nome do gato'),
+                          Text('Descrição'),
+                          Text('Descrição'),
+                        ],
+                      ),
+                      Column(
+                        children: [],
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
